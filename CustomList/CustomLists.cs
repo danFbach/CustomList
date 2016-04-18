@@ -12,8 +12,9 @@ namespace CustomList
         Array newArray;
         public Type customType;
         public CustomLists newList;
-        public CustomLists(CustomLists newList)
+        public CustomLists(Array newArray)
         {
+            this.newArray = newArray;
             this.newList = newList;
         }
         public void add(String newItem)
@@ -22,7 +23,7 @@ namespace CustomList
         }
         public static CustomLists operator +(CustomLists newList, String newItem)
         {
-            newList = new CustomLists(newList + newItem);
+            newList = new CustomLists(newList.newArray + newItem);
             return newList;
         }
         public int Count()

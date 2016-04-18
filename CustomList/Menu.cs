@@ -8,7 +8,7 @@ namespace CustomList
 {
     public class Menu
     {
-        CustomLists customLists = new CustomLists(newList);
+        CustomLists customLists = new CustomLists();
         public void mainMenyuu()
         {
             bool check = true;

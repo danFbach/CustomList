@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            Menu menu = new Menu();
+            menu.mainMenyuu();
         }
     }
 }

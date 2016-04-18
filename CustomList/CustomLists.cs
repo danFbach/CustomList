@@ -8,18 +8,31 @@ using System.Threading.Tasks;
 namespace CustomList
 {
     public class CustomLists : System.Collections.IEnumerable
-    { 
-        Array newArray;        
-        public CustomLists()
+    {
+        Array newArray;
+        public Type customType;
+        public CustomLists newList;
+        public CustomLists(CustomLists newList)
         {
+            this.newList = newList;
         }
-        public static IEnumerable<TSource> Concat<TSource>
-        (
-            this IEnumerable<TSource> first,
-            IEnumerable<TSource> second
-        )
+        public void add(String newItem)
         {
-            return second;
+            CustomLists newCustomList = newList + newItem;
+        }
+        public static CustomLists operator +(CustomLists newList, String newItem)
+        {
+            newList = new CustomLists(newList + newItem);
+            return newList;
+        }
+        public int Count()
+        {
+            int count = 0;
+            foreach (Type item in newArray)
+            {
+                count++;
+            }
+            return count;
         }
         public IEnumerator GetEnumerator()
         {
@@ -29,17 +42,9 @@ namespace CustomList
         {
             return newArray;
         }
+        public void RemoveAt(int removeIndex)
+        {
+
+        }
     }
 }
-//static CustomLists[] listItem<T>(T stuff)
-//{
-//    CustomLists[] items = { new CustomLists { this.stuff = stuff } };
-//    return items;
-//}
-//static Pet[] GetCats()
-//{
-//    Pet[] cats = { new Pet { Name="Barley", Age=8 },
-//                   new Pet { Name="Boots", Age=4 },
-//                   new Pet { Name="Whiskers", Age=1 } };
-//    return cats;
-//}

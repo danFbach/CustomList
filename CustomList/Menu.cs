@@ -8,11 +8,25 @@ namespace CustomList
 {
     public class Menu
     {
+        CustomLists customLists = new CustomLists(newList);
         public void mainMenyuu()
         {
-            Console.WriteLine("Build a list. Please enter a new item for the list.");            
-            String newEntry = Console.ReadLine();
-            
+            bool check = true;
+            while (check)
+            {
+                Console.WriteLine("Build a list. Please enter a new item for the list.");
+                String newEntry = Console.ReadLine();
+                if(newEntry != null)
+                {
+                    customLists.add(newEntry);
+
+                }
+                if (newEntry.Equals("exit")) { check = false; }
+                foreach (CustomLists items in customLists.newList)
+                {
+                    Console.WriteLine(items);
+                }
+            }            
         }
     }
 }
